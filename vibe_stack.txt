@@ -1,0 +1,18 @@
+Vibe-coding stack — B2B Cold Email Outreach Pipeline
+
+IDE:
+Claude Code (VS Code extension + CLI)
+
+Модели:
+- Claude Sonnet 4.6 — основная модель для разработки и итераций
+- Claude Haiku 4.5 — используется в enrich.py для LLM-трансформации персонализации (быстро, дёшево)
+
+Стек:
+- Python 3.11
+- requests + beautifulsoup4 — scraping без лишних зависимостей
+- anthropic SDK — LLM enrichment layer
+- csv (stdlib) — экспорт
+
+Подход:
+Весь pipeline написан и итерирован в реальном времени через Claude Code.
+Архитектурные решения принимались на лету — scraper.py (raw data) и enrich.py (SDR intelligence) разделены намеренно: можно пересобирать данные без повторного скрейпинга.
