@@ -1,5 +1,7 @@
 # B2B Cold Email Outreach Pipeline
 
+**50 domains → enriched dataset with decision-makers, ICP scoring and SDR-ready personalization in a single run.**
+
 Минимальная, воспроизводимая система outbound аутрича для B2B SaaS компаний (Россия + СНГ).
 
 ## Запуск
