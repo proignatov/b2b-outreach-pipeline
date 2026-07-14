@@ -74,8 +74,8 @@ def fetch_html(domain: str) -> str | None:
                 allow_redirects=True,
             )
             if resp.ok:
-                # Fix encoding: let requests detect it instead of assuming UTF-8
-                resp.encoding = resp.apparent_encoding
+                # Trust the server's declared charset; only guess when it's absent
+                resp.encoding = resp.encoding if "charset=" in resp.headers.get("content-type", "").lower() else resp.apparent_encoding
                 return resp.text
         except Exception:
             continue
